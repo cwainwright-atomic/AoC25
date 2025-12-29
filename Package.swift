@@ -17,7 +17,10 @@ let package = Package(
             name: "D1Tests",
             dependencies: ["Parser", "D1"],
         ),
-        .executableTarget(name: "D2"),
+        .executableTarget(
+            name: "D2",
+            resources: [.copy("Data/ids.txt"), .copy("Data/test.txt")]
+        ),
     ]
 )
 
