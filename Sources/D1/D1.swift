@@ -2,7 +2,6 @@
 // https://docs.swift.org/swift-book
 
 import Foundation
-import Parser
 
 @main
 struct D1 {
