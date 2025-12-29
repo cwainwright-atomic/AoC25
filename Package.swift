@@ -5,11 +5,19 @@ import PackageDescription
 
 let package = Package(
     name: "AOC25",
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+    dependencies: [
+        .package(name: "Parser", path: "../../Tools/Parser")
+    ], targets: [
         .executableTarget(
-            name: "AOC25"
+            name: "D1",
+            dependencies: ["Parser"],
+            exclude: ["Test"], resources: [.copy("Data/rotations.txt"), .copy("Data/tests.txt")]
         ),
+        .testTarget(
+            name: "D1Tests",
+            dependencies: ["Parser", "D1"],
+        ),
+        .executableTarget(name: "D2"),
     ]
 )
+
