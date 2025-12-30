@@ -10,8 +10,6 @@ import Testing
 
 @testable import D1
 
-
-
 @Suite("D1")
 struct D1Tests {
     @Test("Naive Dial Tests")
@@ -23,10 +21,6 @@ struct D1Tests {
         var sophisticatedDial: SophisticatedComplexDial = .init(position: 50, range: (0...99))
         
         for rotation in rotations {
-            let nOldPos = naiveDial.position
-            let sOldPos = sophisticatedDial.position
-            
-            
             naiveDial.rotate(by: rotation)
             sophisticatedDial.rotate(by: rotation)
             
