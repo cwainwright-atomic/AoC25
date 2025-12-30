@@ -11,15 +11,15 @@ let package = Package(
         .executableTarget(
             name: "D1",
             dependencies: ["Parser"],
-            exclude: ["Test"], resources: [.copy("Data/rotations.txt"), .copy("Data/tests.txt")]
-        ),
-        .testTarget(
-            name: "D1Tests",
-            dependencies: ["Parser", "D1"],
+            resources: [.copy("Data/rotations.txt"), .copy("Data/tests.txt")],
         ),
         .executableTarget(
             name: "D2",
             resources: [.copy("Data/ids.txt"), .copy("Data/test.txt")]
+        ),
+        .testTarget(
+            name: "Tests",
+            dependencies: ["Parser", "D1"],
         ),
     ]
 )
