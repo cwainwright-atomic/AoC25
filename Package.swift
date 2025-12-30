@@ -11,11 +11,11 @@ let package = Package(
         .executableTarget(
             name: "D1",
             dependencies: ["Parser"],
-            resources: [.copy("Data/rotations.txt"), .copy("Data/tests.txt")],
+            resources: [.copy("Data/input.txt"), .copy("Data/test.txt")],
         ),
         .executableTarget(
             name: "D2",
-            resources: [.copy("Data/ids.txt"), .copy("Data/test.txt")]
+            resources: [.copy("Data/input.txt"), .copy("Data/test.txt")]
         ),
         .executableTarget(
             name: "D3",
