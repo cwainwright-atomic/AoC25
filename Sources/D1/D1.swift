@@ -6,7 +6,7 @@ import Foundation
 @main
 struct D1 {
     static func main() throws {        
-        let input = try String(contentsOf: Bundle.module.url(forResource: "rotations", withExtension: "txt")!, encoding: .utf8)
+        let input = try String(contentsOf: Bundle.module.url(forResource: "input", withExtension: "txt")!, encoding: .utf8)
         let rotations: [Rotation] = try fileParser.run(input)
         
         var dial1: NaiveBasicDial = .init(initialPosition: 50, range: (0...99))

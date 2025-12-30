@@ -10,7 +10,7 @@ import Foundation
 @main
 struct D2 {
     static func main() throws {
-        let input = try String(contentsOf: Bundle.module.url(forResource: "ids", withExtension: "txt")!, encoding: .utf8)
+        let input = try String(contentsOf: Bundle.module.url(forResource: "input", withExtension: "txt")!, encoding: .utf8)
         let idPairs: [ClosedRange<Int>] = input
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .split(separator: ",")
