@@ -59,10 +59,10 @@ extension Rotation: Parsable {
     static var parser: Parser<Rotation> {
         .init { input in
             let direction = try Parser<Direction>.enumeration().run(&input)
-            let value = try Parser.number().run(&input)
+            let value = try Parser<Int>.number().run(&input)
             return Rotation(direction, value: value)
         }
     }
 }
 
-let fileParser: Parser<[Rotation]> = Rotation.parser.sequence(separator: Parser.newline())
+let fileParser: Parser<[Rotation]> = Rotation.parser.sequence(separator: .newline())

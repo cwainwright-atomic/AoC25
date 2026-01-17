@@ -6,11 +6,11 @@ import PackageDescription
 let package = Package(
     name: "AOC25",
     dependencies: [
-        .package(name: "Parser", path: "../../Tools/Parser")
+        .package(url: "https://github.com/TeamAtomicMedia/Parser-iOS.git", from: "2.0.0")
     ], targets: [
         .executableTarget(
             name: "D1",
-            dependencies: ["Parser"],
+            dependencies: [.product(name: "Parser", package: "Parser-iOS")],
             resources: [.copy("Data/input.txt"), .copy("Data/test.txt")],
         ),
         .executableTarget(
@@ -23,17 +23,22 @@ let package = Package(
         ),
         .executableTarget(
             name: "D4",
-            dependencies: ["Parser"],
+            dependencies: [.product(name: "Parser", package: "Parser-iOS")],
             resources: [.copy("Data/input.txt"), .copy("Data/test.txt")],
         ),
         .executableTarget(
             name: "D5",
-            dependencies: ["Parser"],
-            resources: [.copy("Data/input.txt"), .copy("Data/test.txt"), .copy("Data/test2.txt")],
+            dependencies: [.product(name: "Parser", package: "Parser-iOS")],
+            resources: [.copy("Data/input.txt"), .copy("Data/test.txt")],
 		),
+        .executableTarget(
+            name: "D6",
+            dependencies: [.product(name: "Parser", package: "Parser-iOS")],
+            resources: [.copy("Data/input.txt"), .copy("Data/test.txt")],
+        ),
         .testTarget(
             name: "Tests",
-            dependencies: ["Parser", "D1", "D3"],
+            dependencies: [.product(name: "Parser", package: "Parser-iOS"), "D1", "D3", "D6"],
         ),
     ]
 )

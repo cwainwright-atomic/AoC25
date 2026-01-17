@@ -27,7 +27,7 @@ extension PrintingDepartmentMap: @retroactive Parsable {
         Parser<Space>
             .enumeration()
             .many()
-            .sequence(separator: Parser.token("\n"))
+            .sequence(separator: .token("\n"))
     }
 }
 
