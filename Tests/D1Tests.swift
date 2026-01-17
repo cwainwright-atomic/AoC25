@@ -1,5 +1,5 @@
 //
-//  NaiveTests.swift
+//  D1Tests.swift
 //  AOC25
 //
 //  Created by Christopher Wainwright on 28/12/2025.

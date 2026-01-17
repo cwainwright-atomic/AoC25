@@ -57,8 +57,6 @@ struct D3Tests {
             #expect(parsedInput.count == 4)
             
             let activatedBatteryBanks = parsedInput.compactMap{ $0.activate(withSafety: .off(count: 12)) }
-            
-            activatedBatteryBanks.forEach { print($0) }
 
             #expect(activatedBatteryBanks.count == 4)
             
@@ -75,8 +73,6 @@ struct D3Tests {
             #expect(parsedInput.count == 200)
             
             let activatedBatteryBanks = parsedInput.compactMap{ $0.activate(withSafety: .off(count: 12)) }
-            
-            activatedBatteryBanks.forEach { print($0) }
             
             #expect(activatedBatteryBanks.count == 200)
             
